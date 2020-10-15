@@ -1,0 +1,64 @@
+﻿@model TeamModel
+@{
+    ViewData["Title"] = "Home";
+}
+    <h2>Dream 11 IPL 2020</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" id="cardTitle">
+                        <p class="card-text">@Model.TeamName1</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Overs @Model.Overs1</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" id="cardTitle">
+                        <p class="card-text">@Model.TeamName2</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                   <h5 class="card-title">Overs @Model.Overs2</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" id="cardTitle">
+                       Runs/Wickets
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Runs1/@Model.Wickets1</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title" id="cardTitle">
+                        Runs/Wickets
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Runs2/@Model.Wickets2</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+<form asp-action="NextOver" method="post">
+    <div style="text-align: center">
+        <button>Start Match</button>
+        <button>Next Over</button>
+    </div>
+</form>
+@TempData["buttonVal"]
